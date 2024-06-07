@@ -7,6 +7,7 @@ import LanguageSelector from './components/LanguageSelector';
 import TopicSelector from './components/TopicSelector';
 import WriterSelector from './components/WriterSelector';
 import PrayerList from './components/PrayerList';
+import "./globals.css";
 
 type Language = 'english' | 'french' | 'arabic';
 
