@@ -1,4 +1,4 @@
-const isGithubActions = process.env.GITHUB_ACTIONS || false;
+const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 let assetPrefix = '';
 let basePath = '';
 
@@ -14,4 +14,5 @@ module.exports = {
   images: {
     unoptimized: true,
   },
+  output: 'export',
 };
