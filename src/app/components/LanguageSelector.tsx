@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "../globals.css";
+
 interface LanguageSelectorProps {
   languages: { [key: string]: string };
   language: string;
