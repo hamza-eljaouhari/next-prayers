@@ -6,14 +6,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
-    "deploy": "next build && next export"
+    "deploy": "npm run build:production && gh-pages -d out",
+    "build:production": "cross-env GITHUB_ACTIONS=true GITHUB_REPOSITORY=hamza-eljaouhari/next-prayers npm run build"
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
+    "cross-env": "^7.0.3",
     "jspdf": "^2.5.1",
     "next": "14.2.3",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.5",
     "react": "^18",
     "react-dom": "^18"
   },
