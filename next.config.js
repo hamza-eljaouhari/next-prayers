@@ -1,4 +1,5 @@
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
+/** @type {import('next').NextConfig} */
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
 let assetPrefix = '';
 let basePath = '';
 
@@ -8,11 +9,14 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
-module.exports = {
-  assetPrefix: assetPrefix,
-  basePath: basePath,
+const nextConfig = {
+  basePath,
+  assetPrefix,
+  reactStrictMode: true,
   images: {
-    unoptimized: true,
+    loader: 'akamai',
+    path: '/',
   },
-  output: 'export',
 };
+
+module.exports = nextConfig;
