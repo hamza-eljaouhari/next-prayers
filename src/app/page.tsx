@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { jsPDF } from 'jspdf';
-import LanguageSelector from '../components/LanguageSelector';
-import TopicSelector from '../components/TopicSelector';
-import WriterSelector from '../components/WriterSelector';
-import PrayerList from '../components/PrayerList';
+import LanguageSelector from './components/LanguageSelector';
+import TopicSelector from './components/TopicSelector';
+import WriterSelector from './components/WriterSelector';
+import PrayerList from './components/PrayerList';
 
 type Language = 'english' | 'french' | 'arabic';
 
