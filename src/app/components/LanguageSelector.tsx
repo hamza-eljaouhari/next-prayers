@@ -1,14 +1,15 @@
+// src/components/LanguageSelector.tsx
+"use client";
+
 import React from 'react';
 
-import "../globals.css";
+type Language = 'english' | 'french' | 'arabic';
 
 interface LanguageSelectorProps {
-  languages: { [key: string]: string };
-  language: string;
-  setLanguage: React.Dispatch<React.SetStateAction<Language>>;
+    languages: { [key: string]: string };
+    language: Language; // Change this line
+    setLanguage: (language: Language) => void; // Change this line
 }
-
-type Language = 'english' | 'french' | 'arabic';
 
 const LanguageSelector: React.FC<LanguageSelectorProps> = ({ languages, language, setLanguage }) => {
   return (
@@ -21,7 +22,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ languages, language
             className={`px-2 py-1 rounded-full text-white text-sm ${language === lang ? 'bg-blue-500' : 'bg-gray-500'} hover:bg-blue-400`}
             onClick={() => setLanguage(lang as Language)}
           >
-            {lang}
+            {languages[lang]}
           </button>
         ))}
       </div>

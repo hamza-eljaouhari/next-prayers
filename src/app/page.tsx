@@ -242,7 +242,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-lg"></div>
         <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-lg sm:p-20">
           <h1 className="text-2xl font-bold mb-4">Prayer Generator</h1>
-          <LanguageSelector languages={languages} language={language} setLanguage={setLanguage} />
+        <LanguageSelector languages={languages} language={language} setLanguage={setLanguage} />
           <TopicSelector topics={topics} topic={topic} setTopic={setTopic} />
           <WriterSelector writers={writers} writer={writer} setWriter={setWriter} />
           <button
