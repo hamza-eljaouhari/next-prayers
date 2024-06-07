@@ -5,7 +5,6 @@ import LanguageSelector from '../components/LanguageSelector';
 import TopicSelector from '../components/TopicSelector';
 import WriterSelector from '../components/WriterSelector';
 import PrayerList from '../components/PrayerList';
-import styles from '../styles/Home.module.css';
 
 type Language = 'english' | 'french' | 'arabic';
 
@@ -191,10 +190,14 @@ const Home = () => {
     if (canvas) {
       setTimeout(() => {
         canvas.toBlob((blob) => {
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = `poster.${format}`;
-          link.click();
+          if (blob) {
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `poster.${format}`;
+            link.click();
+          } else {
+            console.error('Failed to create blob');
+          }
         }, `image/${format}`);
       }, 1000); // Delay to ensure the image is drawn
     }
